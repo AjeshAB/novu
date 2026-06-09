@@ -315,7 +315,7 @@ export class IntegrationsController {
           check: body.check ?? false,
           conditions: body.conditions,
           configurations: body.configurations,
-          restrictToUserEnvironment: user.scheme === ApiAuthSchemeEnum.API_KEY,
+          restrictToUserEnvironment: isEnvironmentScopedAuthScheme(user.scheme),
         })
       );
 
@@ -355,8 +355,10 @@ export class IntegrationsController {
     const result = await this.autoConfigureIntegrationUsecase.execute(
       AutoConfigureIntegrationCommand.create({
         userId: user._id,
+        environmentId: user.environmentId,
         organizationId: user.organizationId,
         integrationId,
+        restrictToUserEnvironment: isEnvironmentScopedAuthScheme(user.scheme),
       })
     );
 
@@ -389,6 +391,7 @@ export class IntegrationsController {
         environmentId: user.environmentId,
         organizationId: user.organizationId,
         integrationId,
+        restrictToUserEnvironment: isEnvironmentScopedAuthScheme(user.scheme),
       })
     );
 
@@ -422,6 +425,7 @@ export class IntegrationsController {
         environmentId: user.environmentId,
         organizationId: user.organizationId,
         integrationId,
+        restrictToUserEnvironment: isEnvironmentScopedAuthScheme(user.scheme),
       })
     );
   }
