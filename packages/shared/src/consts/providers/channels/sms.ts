@@ -32,6 +32,7 @@ import {
   sinchConfig,
   sms77Config,
   smsCentralConfig,
+  smscloudConfig,
   smsmodeProviderConfig,
   snsConfig,
   telnyxConfig,
@@ -349,5 +350,13 @@ export const smsProviders: IProviderConfig[] = [
     credentials: cmTelecomConfig,
     docReference: 'https://developers.cm.com/messaging/docs/sms',
     logoFileName: { light: 'cm-telecom.svg', dark: 'cm-telecom.svg' },
+  },
+  {
+    id: SmsProviderIdEnum.Smscloud,
+    displayName: 'SMS Cloud',
+    channel: ChannelTypeEnum.SMS,
+    credentials: smscloudConfig,
+    docReference: 'https://app.smscloud.in',
+    logoFileName: { light: 'brevo.svg', dark: 'brevo.svg' },
   },
 ];

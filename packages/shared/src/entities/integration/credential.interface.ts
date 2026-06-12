@@ -12,6 +12,7 @@ export interface ICredentials {
   messageProfileId?: string;
   token?: string;
   from?: string;
+  templateId?: string;
   senderName?: string;
   contentType?: string;
   applicationId?: string;

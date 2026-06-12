@@ -76,7 +76,24 @@
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "cSpell.words": ["Chainable", "usecases"],
-    "vsicons.presets.nestjs": true
+    "vsicons.presets.nestjs": true,
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/build": true,
+      "**/.next": true,
+      "**/coverage": true,
+      "**/.git": true
+    },
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/**": true,
+      "**/dist/**": true,
+      "**/build/**": true,
+      "**/.next/**": true,
+      "**/coverage/**": true
+    }
   },
   "extensions": {
     "recommendations": ["biomejs.biome"]

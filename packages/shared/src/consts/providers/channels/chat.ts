@@ -4,6 +4,7 @@ import {
   chatWebhookConfig,
   getstreamConfig,
   grafanaOnCallConfig,
+  interaktConfig,
   msTeamsConfig,
   rocketChatConfig,
   slackConfigLegacy,
@@ -117,5 +118,16 @@ export const chatProviders: IProviderConfig[] = [
     credentials: telegramConfig,
     docReference: `https://docs.novu.co/platform/integrations/chat/telegram${UTM_CAMPAIGN_QUERY_PARAM}`,
     logoFileName: { light: 'telegram.svg', dark: 'telegram.svg' },
+  },
+  {
+    id: ChatProviderIdEnum.Interakt,
+    displayName: 'Interakt WhatsApp',
+    channel: ChannelTypeEnum.CHAT,
+    credentials: interaktConfig,
+    docReference: 'https://www.interakt.shop/resource-center/whatsapp-business-api/',
+    // TODO: add provider logos at:
+    //   apps/dashboard/public/images/providers/light/square/interakt.svg
+    //   apps/dashboard/public/images/providers/dark/square/interakt.svg  (dark variant, if/when a dark dir is added)
+    logoFileName: { light: 'interakt.svg', dark: 'interakt.svg' },
   },
 ];

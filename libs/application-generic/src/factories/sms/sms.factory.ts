@@ -32,6 +32,7 @@ import {
   SinchHandler,
   Sms77Handler,
   SmsCentralHandler,
+  SmscloudHandler,
   SnsHandler,
   TelnyxHandler,
   TermiiSmsHandler,
@@ -81,6 +82,7 @@ export class SmsFactory implements ISmsFactory {
     new BulkSmsHandler(),
     new ISendProSmsHandler(),
     new CmTelecomHandler(),
+    new SmscloudHandler()
   ];
 
   getHandler(integration: Pick<IntegrationEntity, 'credentials' | 'channel' | 'providerId' | 'configurations'>) {

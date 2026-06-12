@@ -1519,3 +1519,32 @@ export const anthropicAwsAgentConfig: IConfigCredential[] = [
     required: false,
   },
 ];
+
+// ─── Custom Providers ────────────────────────────────────────────────────────
+
+export const smscloudConfig: IConfigCredential[] = [
+  {
+    key: CredentialsKeyEnum.ApiKey,
+    displayName: 'Auth Key',
+    description: 'Your smscloud.in authkey',
+    type: 'text',
+    required: true,
+  },
+  {
+    key: CredentialsKeyEnum.From,
+    displayName: 'Sender ID',
+    description: 'DLT registered sender ID e.g. ARPPAN',
+    type: 'text',
+    required: true,
+  },
+];
+
+export const interaktConfig: IConfigCredential[] = [
+  {
+    key: CredentialsKeyEnum.ApiKey,
+    displayName: 'Interakt API Key',
+    description: 'Your Interakt secret key (Settings → Developer Setup). Used verbatim as the Basic auth token.',
+    type: 'text',
+    required: true,
+  },
+];
